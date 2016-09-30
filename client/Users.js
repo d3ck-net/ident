@@ -1,15 +1,14 @@
 import {RESTCollection} from 'meteor/dasdeck:restcollection';
 import {User} from '/lib/User';
 
+//creates the RESTCollection for the user data type
 Users = new RESTCollection('/api/users', User);
+
+//set primary key for updates and data identification
 Users.setPrimaryKey('id');
 
-Users.attachSchema(new SimpleSchema({
-    // id: {
-    //     type: Number,
-    //     label: 'id',
-    //     optional:true
-    // },
+//create schema for data validation
+var schema = new SimpleSchema({
     firstname: {
         type: String,
         label: 'first name'
@@ -32,7 +31,10 @@ Users.attachSchema(new SimpleSchema({
         label: 'disabled'
     }
 
-}));
+});
 
-var schema = Users.simpleSchema();
+//edit the schema to only show specified fields inside the UI
 schema.setFieldVisiblity(['firstname', 'lastname', 'email', 'color', 'disabled'], 'all');
+
+//attach SimpleSchema to collection
+Users.attachSchema(schema);

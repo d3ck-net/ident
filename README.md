@@ -16,7 +16,9 @@ cd ident
 meteor
 ```
 
-after that you can start this project form the root and run meteor
-```
-meteor
-```
+this will startup the meteor server that serves the client and provides a backend for the REST calls
+
+What I like about this solution is that the actual application code ("client","lib" and"server" directories) is very small,
+most of the action is taking place inside generelized packages ("packages" directory).
+
+I did not use angular as I did not use Angular2 yet. Also, I thinks this solution is more elegant.
