@@ -1,0 +1,30 @@
+
+[submodule "packages/data-filters"]
+    path = packages/data-filters
+    url = https://github.com/d3ck-net/data-filters.git
+
+[submodule "packages/data-list"]
+	path = packages/data-list
+	url = https://github.com/d3ck-net/data-list.git
+
+[submodule "packages/data-edit"]
+	path = packages/data-edit
+	url = https://github.com/d3ck-net/data-edit.git
+
+[submodule "packages/restcollection"]
+    path = packages/restcollection
+    url = https://github.com/d3ck-net/restcollection.git
+
+
+[submodule "packages/bootstrap"]
+	path = packages/bootstrap
+	url = https://github.com/d3ck-net/bootstrap.git
+
+[submodule "packages/adminTheme"]
+	path = packages/adminTheme
+	url = https://github.com/d3ck-net/adminTheme.git
+
+[submodule "packages/queryBuilder"]
+	path = packages/queryBuilder
+	url = https://github.com/d3ck-net/queryBuilder.git
+
