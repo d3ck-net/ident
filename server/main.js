@@ -2,12 +2,13 @@ import {Meteor} from 'meteor/meteor';
 import {Router} from 'meteor/iron:router';
 import {_} from 'meteor/underscore';
 
-//create a local database
+//create a local database (Mongo) to simulate API calls
 Users = new Mongo.Collection('Users');
 
 //on startup
 Meteor.startup(function () {
 
+    //dummy data
     var dummyData = [
         {
             "id": 5,
@@ -53,7 +54,7 @@ Meteor.startup(function () {
             "disabled": false
         }];
 
-    //import dummy data into database
+    //import dummy data into database if not done yet
     if (Users.findOne() === undefined) {
         _.each(dummyData, function (o) {
             Users.insert(o);
@@ -64,7 +65,6 @@ Meteor.startup(function () {
 
 //setting up a simple "REST server" to simulate the server side
 Router.route('/api/users/:id?', function (params) {
-
 
     var filter = {};
 
